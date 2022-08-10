@@ -1,6 +1,8 @@
 # kubernetes-flask-redis-app
 
-![Screenshot](docs/screenshoot.png)
+![Screenshot](docs/screenshoot-service.png)
+
+
 ## Deploy redis from the official documentation
 
 ```sh
