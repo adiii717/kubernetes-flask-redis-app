@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: redis-flask-python1
+spec:
+  selector:
+    matchLabels:
+      app: redis-flask-python1
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: redis-flask-python1
+    spec:
+      containers:
+        - name: redis-flask-python-app
+          image: adiii717/demo-app:flask-redis-demo-app
+          env:
+          - name: REDIS_HOST
+            value: "redis-leader.default"
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080
